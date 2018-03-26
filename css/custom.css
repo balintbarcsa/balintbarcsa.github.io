@@ -1,0 +1,31 @@
+/****** PLACE YOUR CUSTOM STYLES HERE ******/
+a.coloring{
+  color: #666;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+a.coloring:hover{
+  color: #292929;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+ul.content {
+  width: 70%;
+  float: left;
+}
+
+div#kontakt, div#uni, div#romis{
+  cursor: pointer;
+}
+
+@media (max-width: 767px){
+  #full-mobile{
+    height: 100vh;
+  }
+  #center{
+    transform: translateY(-50%);
+    top: 50%;
+  }
+}
