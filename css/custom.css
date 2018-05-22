@@ -16,7 +16,7 @@ ul.content {
   float: left;
 }
 
-div#kontakt, div#uni, div#romis{
+div#kontakt, div#uni, div#romis, div#trustpilot{
   cursor: pointer;
 }
 
@@ -28,4 +28,8 @@ div#kontakt, div#uni, div#romis{
     transform: translateY(-50%);
     top: 50%;
   }
+}
+
+section {
+  padding: 48px 0;
 }
