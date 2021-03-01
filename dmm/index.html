@@ -1,0 +1,722 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Digital Innovation</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c9bc0dec-79e3-450e-883a-4ffa5ba8acce" class="page sans"><header><h1 class="page-title">Digital Innovation</h1></header><div class="page-body"><figure id="b78169a0-e903-4437-b887-caafa68ff902" class="link-to-page"><a href="https://www.notion.so/Digital-Change-management-b78169a0e9034437b887caafa68ff902">Digital Change management</a></figure><figure id="45393223-c375-47a1-94a7-7364fe68320a" class="link-to-page"><a href="https://www.notion.so/Service-Design-45393223c37547a194a77364fe68320a"><span class="icon">📋</span>Service Design</a></figure><p id="16718b4b-fa28-4edd-85b5-8416aa9267f7" class="">
+</p><p id="2dc5e52a-ee66-44f0-bd87-9f66da70a6fe" class="">DONE:</p><figure id="13a7252c-82ab-4cbb-a7da-d99940c69fb8"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/BCG-HRs-Pioneering-Role-in-Agile-at-ING-May-2018_tcm9-193629.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/260557a3-e234-41f7-8574-c54b9bbcdec6/BCG-HRs-Pioneering-Role-in-Agile-at-ING-May-2018_tcm9-193629.pdf</a></div></figure><figure id="0686fbd4-709d-40dd-906c-1002ce5ee593"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/INGs_Agile_TransformationTeaching_an_Elephant_to_Race.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2bc17518-d995-4501-b471-847fb7bd8b21/INGs_Agile_TransformationTeaching_an_Elephant_to_Race.pdf</a></div></figure><figure id="abaf5ecf-0c8e-4a65-b90b-5c255083504d"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Transformation_at_ING_A_Agile.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/929a2522-896c-4d26-8618-07c7a900594c/Transformation_at_ING_A_Agile.pdf</a></div></figure><figure id="a0624ed9-dc1a-4216-ab67-4046c5168053"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/INGs-agile-transformation.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fee9ec8c-e54a-4946-bc55-10f381c0bfc2/INGs-agile-transformation.pdf</a></div></figure><p id="ad2923a8-5529-49b5-ba71-c586852e9d93" class="">
+</p><p id="aff99930-2036-4778-acfe-0998d9b55d70" class="">
+</p><p id="09dabe3f-cd5f-4a42-9c4f-8edfe25b414e" class="">ING resources:</p><ul id="23de88b3-5177-4029-8e62-f43af9f67dee" class="bulleted-list"><li><a href="https://hbsp.harvard.edu/product/818078-PDF-ENG?itemFindingMethod=Other">https://hbsp.harvard.edu/product/818078-PDF-ENG?itemFindingMethod=Other</a></li></ul><ul id="e94d4cd3-2507-42c5-b48b-b57f92292c5d" class="bulleted-list"><li><a href="https://hbsp.harvard.edu/product/818121-PDF-ENG?itemFindingMethod=Other">https://hbsp.harvard.edu/product/818121-PDF-ENG?itemFindingMethod=Other</a></li></ul><figure id="a5819cbb-eab0-4b20-98f4-7ef137fd6fce"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/FWT__BOS_Agile_Management_with_ING.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8f1c90d5-5e68-4ad6-a879-e47d2750bbc9/FWT__BOS_Agile_Management_with_ING.pdf</a></div></figure><p id="e105f9dd-f2a6-4568-b39c-aa3a544a18b4" class="">
+</p><p id="e2b28b14-b8de-42d9-b3db-a7dacdf3a4fd" class="">Other:</p><ul id="212c0605-fad3-465f-9d24-fea6e1aed210" class="bulleted-list"><li><a href="https://hbsp.harvard.edu/catalog/collections/digital-intelligence">https://hbsp.harvard.edu/catalog/collections/digital-intelligence</a></li></ul><ul id="882666b2-9974-4f5e-bd88-dfe2ddba759a" class="bulleted-list"><li><a href="https://learnit.itu.dk/local/coursebase/archive/www/course90a4.html?course_id=1574520&amp;mode=search&amp;lang=en&amp;print_friendly_p=t&amp;goto=1582807250.000">https://learnit.itu.dk/local/coursebase/archive/www/course90a4.html?course_id=1574520&amp;mode=search&amp;lang=en&amp;print_friendly_p=t&amp;goto=1582807250.000</a></li></ul><ul id="c6f3fed1-c52f-4b1b-8259-d40cc6b33266" class="bulleted-list"><li><a href="https://www.economist.com/finance-and-economics/2017/11/09/ing-a-dutch-bank-finds-a-winning-digital-strategy">https://www.economist.com/finance-and-economics/2017/11/09/ing-a-dutch-bank-finds-a-winning-digital-strategy</a></li></ul><ul id="3dcb6fe9-3889-4e0c-874e-6d56f4521b2d" class="bulleted-list"><li><a href="https://www.capgemini.com/wp-content/uploads/2017/07/capital-one-doing-business-the-digital-way_0.pdf">https://www.capgemini.com/wp-content/uploads/2017/07/capital-one-doing-business-the-digital-way_0.pdf</a></li></ul><ul id="68a30831-58b7-4321-b69a-3ec0c52ad06d" class="bulleted-list"><li><a href="https://www.uxdesignagency.com/blog/banking-back-office-transformation-ux-case-study">https://www.uxdesignagency.com/blog/banking-back-office-transformation-ux-case-study</a></li></ul><p id="7999716c-f13d-492f-95b5-165909240782" class="">
+</p><p id="e4077b13-855b-4b64-a235-4ccd13e6454e" class="">Digital Maturity:</p><ul id="8ce14035-b103-4db2-b6cf-4d74d8e5f8fd" class="bulleted-list"><li><a href="https://dbd.au.dk/about-dmat/">https://dbd.au.dk/about-dmat/</a></li></ul><ul id="437648e2-3702-4ffd-9a81-ab4c9e80a044" class="bulleted-list"><li>Survey: <a href="https://hbr.org/sponsored/2019/04/how-does-your-organizations-digital-maturity-compare-to-others">How Does Your Organization’s Digital Maturity Compare to Others? [2019, HBR&amp;Deloitte]</a></li></ul><ul id="bd6555aa-debe-4ffb-a9b3-929b16f137cf" class="bulleted-list"><li><a href="https://digitalmaturity.org/">https://digitalmaturity.org</a></li></ul><ul id="cc3e14cc-4477-476e-9827-4530a30e5bd7" class="bulleted-list"><li><a href="http://www.otechtalks.tv/61-how-to-do-digital-maturity-assessment/">http://www.otechtalks.tv/61-how-to-do-digital-maturity-assessment/</a></li></ul><figure id="6ce439b3-6be8-4b9b-82f4-030e98995ca2"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/The_Digital_Advantage__How_Digital_Leaders_Outperform_their_Peers_in_Every_Industry.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/972f80a9-4ebf-4e08-a1fa-3f725aa1f3e1/The_Digital_Advantage__How_Digital_Leaders_Outperform_their_Peers_in_Every_Industry.pdf</a></div></figure><ul id="9a4a9809-2b5e-442d-be01-a531503a1329" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><a href="https://www2.deloitte.com/content/dam/Deloitte/fr/Documents/strategy/dup_strategy-not-technology-drives-digital-transformation.pdf">Strategy, not Technology, Drives Digital Transformation [2015, Deloitte&amp;MITSloan]</a></span><ul id="7d21db03-921c-4e1e-9b19-f79f9685737c" class="toggle"><li><details open=""><summary>NOTES</summary><ol id="2aeeb2ec-cd47-4c44-8019-f46cd8e0ddff" class="numbered-list" start="1"><li>Digital strategy drives digital maturity<p id="532a8615-bc84-460a-9b80-87309e52b170" class="">What separates digital leaders from the rest is a clear digital strategy combined with a culture and leadership poised to drive the transforma­tion.</p><ul id="80d6de21-83e4-4993-b12c-b70c2d7840e0" class="toggle"><li><details open=""><summary>Figure: What hinders digital maturity</summary><figure id="cb90bc24-0ec0-4bcf-a22f-3f1a2814763a" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Screen_Shot_2021-02-25_at_9.16.22_AM.png"><img style="width:624px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Screen_Shot_2021-02-25_at_9.16.22_AM.png"/></a></figure></details></li></ul></li></ol><ol id="95bbfe2b-90ce-477e-8c34-4101d3b5e2ad" class="numbered-list" start="2"><li>The power of a digital transformation strategy lies in its scope and objectives:
+Digital strategies in the most mature organizations are developed with an eye on transforming the business.<p id="14b1784f-b5cc-42ba-b703-2444c1b50d0a" class="">The trap to avoid, is focusing on technology as an end in itself. Instead, technology should be a means to strategically potent ends</p><ul id="4bcebcbe-b8dc-4e70-aeaa-ef8259f61866" class="toggle"><li><details open=""><summary>Figure: Strategy objectives, communicating strategy</summary><figure id="795bef36-12c5-4b6f-b650-e845d5aaecc2" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled.png"><img style="width:934px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled.png"/></a></figure><p id="20a5e731-d9df-4062-bb66-25c1aaab997e" class="">
+</p></details></li></ul></li></ol><ol id="fdcc24e9-2333-4240-9e4e-25b4bf4b2748" class="numbered-list" start="3"><li>Maturing digital organizations build skills to realize the strategy.<p id="961cb859-55e0-446e-a463-e0e46727863f" class="">More than 75% of respondents from these companies agree or strongly agree that their orga­nizations are able to build the necessary skills to capitalize on digital trends. Among low­ maturity en­tities, the number plummets to 19%.</p><p id="4da40e76-d27c-4c53-a4d6-e9a1497f30e3" class="">Training to fill skill gaps is increasingly offered online and on a just­-in­-time basis</p><p id="007ebb4d-d616-465d-9a80-76bbbc72e5c9" class="">Disney&#x27;s example: “Now we offer content such as TED-­like talks featuring Disney executives that allow employees to seek knowledge when and how they need it.&quot;</p></li></ol><ol id="a89be02e-d4e7-4c5a-9865-8d077a76cddf" class="numbered-list" start="4"><li>Employees want to work for digital leaders.<ul id="e3a36a02-7f9f-403e-9f37-cf5f3e4e0543" class="toggle"><li><details open=""><summary>Figure</summary><figure id="f17356ba-3c96-401c-bc00-6aadc7db8fc9" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%201.png"><img style="width:876px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%201.png"/></a></figure></details></li></ul><ul id="af4a5fda-b8ed-41a1-9cd1-6bf6133d092d" class="toggle"><li><details open=""><summary>Figure</summary><figure id="62e2195d-99b9-4a1c-b8a6-a8091b20c4c9" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%202.png"><img style="width:952px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%202.png"/></a></figure></details></li></ul><p id="3c2ad400-25fc-444e-8af8-d3a333a5eaf2" class="">Telco example: gamification for employees: “We issue social communications challenges for our em­ployees, and in return those employees who publish via social or complete a challenge get points,”</p><p id="26ad40ff-a9a1-4b20-98db-1c665ada8eaa" class="">Collaboration: ideas arise through collab­orative efforts among people of different backgrounds.</p></li></ol><ol id="828897c0-5552-4cfa-a387-b44add5acb0a" class="numbered-list" start="5"><li>Taking risks becomes a cultural norm:<p id="458a3460-fbcf-4a33-8001-519ca7d717a3" class="">To make their organizations less risk averse, business leaders have to embrace failure as a prerequisite for success<div class="indented"><p id="5226f7c1-2abf-4645-b0fc-a1895d1c0d7f" class="">“By the time it’s obvious you need to change, it’s usually too late,” says John Chambers, Cisco’s CEO. “Very often you have to be willing to make a big move even before most of your advisers are on board. You have to be bold. And you need a culture that lets you
+figure out how to win even without a blueprint.”</p></div></p><p id="8acfd11b-4f9a-40cc-865f-07713aa40d06" class="">Culture: “Culture leads the adoption of technology. Our ability to inno­vate depends on the impatience of our culture.”<div class="indented"><p id="a7db061e-85d0-4bf6-b0c3-2003d39671fc" class="">“Organizations often think about technology in a very narrow sense,” she says. “They don’t ask questions about what be­haviors a new technology might foster and what behaviors it might actually inhibit. The answers must line up with the overall culture and direction that leaders want to take the company.”</p></div></p></li></ol><ol id="873ff421-1b21-4ef1-baba-7a5e0f458aaf" class="numbered-list" start="6"><li>The digital agenda is led from the top:<p id="3ff6d7f4-8fbf-4136-a7f5-26a7a38fe728" class="">Digital fluency, however, doesn’t demand mastery of the technologies. Instead, it requires the ability to articulate the value of digital technologies to the organization’s future.</p><p id="320f7582-b9a9-46c3-9203-13ce698b105e" class="">Communication: storytelling is be­ coming a popular means of gaining employee buy­in and organizational traction for digital transforma­tion.<div class="indented"><p id="d466faf0-7e38-4271-b989-c3714fb7b7db" class="">“You can lead by ex­ ample by showing your support for teams and helping them understand how their work fits into the overall business plan.”<div class="indented"><p id="35d49d39-6a30-40ec-b3e4-1ea9a3ec7150" class="">leaders and employees do not always rec­ognize when they’re “hearing” something of value. It is hard to value newly created forms of knowledge when you don’t recognize their existence.</p></div></p><p id="78cc5b49-c6c8-420c-aa87-726df092b3f0" class="">Disney&#x27;s example: “A great story is a key element in getting funding for a pilot for our TV shows, and we apply this same storytelling capability to allocate capital for our employee digital initiatives.”</p></div></p></li></ol><p id="4098a152-85a9-405d-a74b-818505231ec5" class="">Conclusion:</p><figure id="ab33b2e4-f877-4a9b-9eab-dcdc49826cb3" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%203.png"><img style="width:1580px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%203.png"/></a></figure><p id="b553b98f-fccb-4a7e-aff5-3f42150515b8" class="">To position their orga­nizations to move forward into a digitally transformed future, business leaders should tackle these questions:</p><ol id="66adfa52-ef11-4e67-9263-72a0926fa1d6" class="numbered-list" start="1"><li>Does our organization have a digital strategy that goes beyond implementing technologies?</li></ol><ol id="aa442d18-e489-4122-b2bc-fc829aa5b7cb" class="numbered-list" start="2"><li>Does your company culture foster digital initiatives?</li></ol><ol id="566e5e8e-c122-4f46-b3f4-83453de61fac" class="numbered-list" start="3"><li>Is your organization confident in its leadership’s digital fluency?</li></ol></details></li></ul></li></ul><ul id="caaa2f2c-d411-42b4-9355-8e41dda6a0cb" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Development of a Digital Transformation Maturity Model for IT Companies</span><figure id="45aa0999-2a6b-4298-8223-4acbbafff903"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/gollhardt2020.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/af4111f8-768a-421f-abfd-ad9ce354c88d/gollhardt2020.pdf</a></div></figure><ul id="56b22005-8e69-4b49-a4a5-91f4358da549" class="toggle"><li><details open=""><summary>NOTES (I&#x27;ve only skimmed it)</summary><figure id="0b370c4a-cfae-43ef-a96e-cba90b9ab216" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%204.png"><img style="width:932px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%204.png"/></a></figure><p id="11f6d821-dc2a-44e3-adc5-52aeaab320ba" class="">
+</p></details></li></ul></li></ul><ul id="4c94244e-b36f-48bd-b0d2-8fe7644bf207" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Digital Transformation Maturity: A Systematic Review of Literature</span><ul id="201954fa-7919-4ed4-bee8-24b506f8de6e" class="toggle"><li><details open=""><summary>NOTES:</summary><figure id="0d6c9735-9509-4aec-aec6-8d155c1e444e" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%205.png"><img style="width:1372px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%205.png"/></a></figure><figure id="6d993476-5b0c-4a50-ac53-a87148666952" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Screen_Shot_2021-02-25_at_12.04.55_PM.png"><img style="width:1376px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Screen_Shot_2021-02-25_at_12.04.55_PM.png"/></a></figure><div id="51b28124-8238-4945-8a49-9d78a4ee14e6" class="collection-content"><h4 class="collection-title"></h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>Maturity area</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Attributes &amp; characteristics</th></tr></thead><tbody><tr id="304c145c-74b7-4c15-a126-b916b67ce7b1"><td class="cell-title"><a href="https://www.notion.so/Digital-Culture-304c145c74b74c15a126b916b67ce7b1">
+						
+							
+								Digital Culture
+
+							
+						
+					</a></td><td class="cell-s?Oa">Attributes enhancing digital transformation efforts: risk-taking, test &amp; learn, no-blame culture, customer centric, open to change, agile, autonomy of employees, ...</td></tr><tr id="b14edb2c-bb47-4094-89d6-c7e871ee679a"><td class="cell-title"><a href="https://www.notion.so/Technology-b14edb2cbb47409489d6c7e871ee679a">Technology </a></td><td class="cell-s?Oa">ICT, IT architecture/systems and new digitalization-based IT systems, agility of supporting systems, digital data processing, ...</td></tr><tr id="df611055-caad-47cf-922a-e8b9f5fcae27"><td class="cell-title"><a href="https://www.notion.so/Operations-Processes-df611055caad47cf922ae8b9f5fcae27">Operations &amp; Processes</a></td><td class="cell-s?Oa">Process digitization and automation, flexibility/agility of processes, bringing processes to an industrialized standard, operations excellence, ...</td></tr><tr id="abd9bd3a-468d-4526-86a7-f479b3f6be42"><td class="cell-title"><a href="https://www.notion.so/Digital-Strategy-abd9bd3a468d452686a7f479b3f6be42">Digital Strategy</a></td><td class="cell-s?Oa">Development/execution of a strategy using digital technology to do business in fundamentally new ways, bold long-term orientation, linked to business strategy, I4.0 roadmap, ...</td></tr><tr id="21495b8e-87cf-4e0b-9f41-47f5d00bb80a"><td class="cell-title"><a href="https://www.notion.so/Organization-21495b8e87cf4e0b9f4147f5d00bb80a">Organization</a></td><td class="cell-s?Oa">Management structure/practices supporting digital business, cross-functional collaboration, digital skills embedded throughout the organization, roles/tasks related to digitalization defined, adequate resource allocation, cross-functional teams to implement digital business priorities, flexible communities, agile management, ...</td></tr><tr id="ef8bbba3-7cca-4d3a-ae0e-e7c86151abf8"><td class="cell-title"><a href="https://www.notion.so/Digital-Skills-ef8bbba37cca4d3aae0ee7c86151abf8">Digital Skills</a></td><td class="cell-s?Oa">Digital skills, expertise, experience and interest; personnel dedicated to I4.0, ICT  competencies of employees, data empowered decision making, openness to new technologies, employees have access to digital skills/expertise as needed, ...</td></tr><tr id="1c197875-58fe-4699-97d1-1492b69ae541"><td class="cell-title"><a href="https://www.notion.so/Innovation-1c19787558fe469997d11492b69ae541">Innovation</a></td><td class="cell-s?Oa">Capabilities enabling a more flexible/agile way of working, development of disruptive business models, using agile methods, involving customer into innovation process, funding innovation, innovation conducted regularly, ...</td></tr><tr id="99a97dc2-4625-49ab-a23d-15acd6b621a9"><td class="cell-title"><a href="https://www.notion.so/Customer-Insight-Experience-99a97dc2462549aba23d15acd6b621a9">Customer Insight &amp; Experience</a></td><td class="cell-s?Oa">Customer benefit from digitization; personalization of products/services; utilizing digital services to engage customers; focus on customer value; digitization of customer touchpoints; creating value out of data, customer participation and empowerment, ...</td></tr><tr id="6b64e1e3-a057-4e51-b07c-6a4aca934d8e"><td class="cell-title"><a href="https://www.notion.so/Governance-6b64e1e3a0574e51b07c6a4aca934d8e">Governance</a></td><td class="cell-s?Oa">Ensuring comprehensive/reliable execution of digital strategy; everyone has a mandate to think creatively and innovate, systematic approaches are taken to innovation/change management, engagement on different hierarchical levels, standards and regulations, adequate resource allocation, ...</td></tr><tr id="97fde9ec-a570-4eb2-8979-4c4f12c375eb"><td class="cell-title"><a href="https://www.notion.so/Vision-97fde9eca5704eb289794c4f12c375eb">Vision</a></td><td class="cell-s?Oa">Organization has defined an initial digital vision; digital technology realizes the vision of the organization; all staff work in sync with the digital vision, ...</td></tr><tr id="555027bb-299c-4199-9b3f-4eedaeaa4bd2"><td class="cell-title"><a href="https://www.notion.so/Digital-Ecosystem-555027bb299c41999b3f4eedaeaa4bd2">Digital Ecosystem</a></td><td class="cell-s?Oa">The organization works as a part of a digital ecosystem; digitization/integration of vertical/horizontal value chains, digital connection with the business network (e.g. through API), interoperable technology platforms enable new/highly customizable solutions configured by end-users, ...</td></tr><tr id="6a9a4cb9-8d23-43df-84ea-d6a5b780aff6"><td class="cell-title"><a href="https://www.notion.so/Leadership-6a9a4cb98d2343df84ead6a5b780aff6">Leadership</a></td><td class="cell-s?Oa">Leadership team learning new technologies, leaders have a compelling long-term vision, leaders actively identify and realize new opportunities, foster collaboration, existence of central coordination for I4.0 or digital transformation, ...</td></tr><tr id="7d01dc93-0591-4b31-9604-292ccf4b7b7f"><td class="cell-title"><a href="https://www.notion.so/Compliance-Security-7d01dc9305914b319604292ccf4b7b7f">Compliance &amp; Security</a></td><td class="cell-s?Oa">IT security, digital security, IT compliance within organization and towards stakeholders, assessing risk factors, risk management, IP, optimizing value-chain network for compliance; avoid unauthorized access, ...</td></tr><tr id="c3df9f27-43c8-4004-ad55-031867980266"><td class="cell-title"><a href="https://www.notion.so/Products-Services-c3df9f2743c84004ad55031867980266">Products &amp; Services</a></td><td class="cell-s?Oa">Smart products/services, digitization of product/service offerings, data analytics deployed for individualization, data-based services, digital features, ...</td></tr><tr id="41c9ba40-f812-4136-95e6-c7168bb3c7a8"><td class="cell-title"><a href="https://www.notion.so/Business-Model-41c9ba40f812413695e6c7168bb3c7a8">Business Model</a></td><td class="cell-s?Oa">Development of new and disruptive business models, integrated customer solutions across supply chain, digital product/service portfolio with SW, network (M2M) and data as key differentiator, digital initiatives are generating value, business models are expanding, ...</td></tr></tbody></table></div><figure id="254638ea-220e-469e-9bf8-9041f9a6c793" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%206.png"><img style="width:1326px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%206.png"/></a></figure><figure id="117afe3c-9307-47d4-9041-eeae3e341e4c" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%207.png"><img style="width:480px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%207.png"/></a></figure><figure id="e56c15a0-f136-4d64-b7b8-e119a8aec59b" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%208.png"><img style="width:480px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%208.png"/></a></figure><figure id="92c15e05-deca-4b2b-813e-d5ed3cdfb043" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%209.png"><img style="width:1326px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%209.png"/></a></figure><figure id="db9f5613-31b4-4811-bd60-758f968dff2f" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2010.png"><img style="width:1326px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2010.png"/></a></figure><ul id="38c09ec8-3eb4-4bde-8378-32a89fbdc5aa" class="bulleted-list"><li>Cultural resources:<p id="370fddb3-fd1d-4442-8959-ba7c472fe9a6" class="">BUVAT, J., CRUMMERNEL, C., KAR, K. <em>et al</em>. 2017. <em>The digital culture challenge: closing the employee leadership gap. </em>Capgemini Digital Transformation Institute Survey. Paris: Capgemini Digital Transformation Institute.</p><p id="bddd1431-3258-472d-9522-ab5232e5c99d" class="">one of the most popular organizational culture models:
+DENISON, D. R. and MISHRA, A. K. 1995. Toward a theory of organizational culture and effectiveness<em>. Organization Science</em>, 6(2): 204–223.</p></li></ul><ul id="57cf9fde-1fa3-4d21-959c-50757c64371a" class="bulleted-list"><li>Some models distinguish between two main areas, encompassing digital assets (e.g. digital capabilities, investments, digital infrastructure) and transformation enablers (e.g. vision, culture, leadership, governance, innovation or agility), clustering dimensions into these two domains<ul id="389dfd44-4d1e-4899-8646-937a91f554fc" class="bulleted-list"><li>Westerman and MacAfee, 2012;<figure id="4720ca6a-a388-4a9a-8e08-e9f63fc36f99"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/KEY_The_Digital_Advantage__How_Digital_Leaders_Outperform_their_Peers_in_Every_Industry.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/589d7bdb-0088-49fd-a6f3-2352488ecbbe/KEY_The_Digital_Advantage__How_Digital_Leaders_Outperform_their_Peers_in_Every_Industry.pdf</a></div></figure></li></ul><ul id="bf7bc0bc-5c34-42b6-bc76-26e42bbda7b6" class="bulleted-list"><li>Shahiduzzamann et al., 2017<p id="ff94265d-f69e-41c4-a378-91dd86108d41" class="">See under PwC</p></li></ul></li></ul><ul id="a9ece87f-8128-4ad5-9dd4-861960430ea6" class="bulleted-list"><li>Regarding organizational culture, the research identified that 55% of the examined models include “culture” as one of the maturity dimensions. The majority of the models developed by practitioners represent “culture” as a dimension (in 70% of the cases)</li></ul><p id="a1611753-6fc0-42ff-a335-b900755a8489" class="">Summary:</p><p id="40a2e404-b09f-46a8-8128-735e9851f34f" class=""><strong>most models provide an incomplete picture of digital maturity and that the description of digital maturity stages is inconsistent across all models.</strong></p><ul id="7db8cf0a-844e-4e64-86df-5d46a1694bde" class="bulleted-list"><li><mark class="highlight-orange">There is no consistent definition of digital maturity</mark> available because all the different maturity models and their underlying definition of digital maturity show a heterogeneity in content and methodology.</li></ul><ul id="6e726ed3-8fff-4528-8628-147f9405a053" class="bulleted-list"><li>It seems, that the <mark class="highlight-orange">digitalization of the business model is neglected</mark> in most digital maturity approaches.</li></ul><ul id="86000280-bcbd-48d8-a32e-2dcba88212e0" class="bulleted-list"><li>it can be argued that general digital maturity models more comprehensively address transformational capabilities, and domain-specific models more strongly address digital-technological capabilities in the assessment of the digital maturity of a company.</li></ul><ul id="f00d7c3e-bdaf-4925-88f2-c7dc6f3f682f" class="bulleted-list"><li>Either transformational management capabilities (e.g. vision, culture, leadership, governance, innovation, agility, ...) or an organization’s digital foundation (e.g. technology, digital skills, organization, strategy, customer experience, ...) are not addressed sufficiently and systematically.</li></ul><ul id="1930ebf4-3ca7-4a0e-84a2-aefc1a1c1540" class="bulleted-list"><li>this paper reveal a lack of digital maturity models reflecting domains other than manufacturing [...] There is no standard approach for describing digital maturity levels, not even within a domain like manufacturing.</li></ul></details></li></ul></li></ul><ul id="445bb935-2500-47bd-ba8b-ea5a30e1eca1" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Comparition of Select Digital Maturity Models for Digital Transformation Dynamics</span><ul id="3ac5a248-024b-4ab9-bddf-63be1f850357" class="toggle"><li><details open=""><summary>NOTES: (Smells like plagiarism, use references)</summary><p id="82d0965d-37f5-4cd7-8bfa-03a5d82f17e7" class="">main factors driving the need for digital transformation:</p><ul id="2c19a33e-c542-40a9-acf4-0b1ecedc6eb8" class="bulleted-list"><li>increasing internet penetration and simultaneously rising adoption of accompanying technologies (cloud, AI, etc.)</li></ul><ul id="f8a9cabb-ebe8-4550-be23-a89caeff650f" class="bulleted-list"><li>intensity of competition from big global firms (FAANG)</li></ul><ul id="a608b882-19c6-4fe0-8f49-4c35cefd5add" class="bulleted-list"><li>change in the consumer behavior as a response to the digital revolution (preference to online)</li></ul><p id="62840689-c0be-4a8f-ab85-fbf363a26738" class=""><mark class="highlight-orange">(See: &quot;How digital are we? Maturity models for the assessment of a company’s status in the digital transformation&quot; for more on bellow)</mark></p><p id="6371dec2-ebec-4382-a5a5-eef4b30b45ef" class="">Digital Maturity Level Determination:</p><ul id="7b93d068-7065-4ccd-9267-09ed0ffb9b42" class="bulleted-list"><li>Qualitative models mostly employ semi-structured management interviews and the assessment is done on the basis of interpretation. </li></ul><ul id="cda69728-e739-4cbd-8e9c-d9cb5d3e7460" class="bulleted-list"><li>Quantitative models usually follow structured questionnaires with Likert scales such as using a summarized score for each dimension.</li></ul><p id="4a44051c-f8ad-49cf-9f1e-7618986e3d5d" class="">Design parameters of maturity models:</p><figure id="27cdb5c5-bbb6-47fd-9295-5cb828d451cc" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2011.png"><img style="width:553px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2011.png"/></a></figure></details></li></ul></li></ul><ul id="09e9477c-a7f6-4dd2-99a0-67f1d460cb2e" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">How digital are we? Maturity models for the assessment of a company’s status in the digital transformation</span><ul id="7fe63e1d-fb36-45d2-b705-8b39da31ab07" class="toggle"><li><details open=""><summary>NOTES:</summary><p id="de1b1698-d53a-4b11-8290-ed82f9867c28" class="">Design parameters of maturity models:</p><figure id="e9cb125f-fdae-403d-84d9-e84fe05a0dee" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2011.png"><img style="width:553px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2011.png"/></a></figure></details></li></ul></li></ul><ul id="0b59cbd6-0dc2-4a33-bfee-6af5b9873912" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Stoianova O. V., Lezina T. A., Ivanоva V. V. (2020) 
+The framework for assessing company’s digital transformation readiness</span><ul id="65a4ec1a-0513-4200-a3f1-5270126fa0ef" class="toggle"><li><details open=""><summary>NOTES: (good short descriptions of other frameworks)</summary><p id="4020a5bc-75da-48ec-a839-f521bb948681" class="">DTRA (Digital Transformation Readiness Assessment) framework</p><ul id="867c507b-143f-40af-88f4-87f68b79ab2a" class="bulleted-list"><li>the structure of the framework does not imply a unified integral indicator of a company’s readiness for digital transformation. Its purpose is a qualitative assessment of readiness according to the most significant universal criteria. Such evaluation aims to help managers understand what might prevent the success of that transformation.</li></ul><p id="2f0e09af-9104-4b13-b256-016910917251" class="">Structure</p><ul id="6cc5f563-c694-495e-8f5b-22f98f5e377f" class="bulleted-list"><li>Domains<ul id="46de015c-40fd-4b03-b6db-ad14e66b1f94" class="bulleted-list"><li>Criterias<ul id="ceee8999-df2a-4465-9a3d-6ace31e03416" class="bulleted-list"><li>Characteristics - eg. “personnel qualifications”<ul id="96a8c2cc-d7b5-4fcc-ae28-961ff5bb9f5a" class="bulleted-list"><li>Metrics: objective quantitative estimates - eg. “average score based on certification results” or &quot;number of errors due to the fault of employees&quot;</li></ul><ul id="fa8eb912-c7c1-40b6-ad6e-f97906859462" class="bulleted-list"><li>Evidences: facts confirming a particular value of a given characteristic - eg. evidence in favor of the values “high” or “above average” is the certificate “the presence of training and develop- ment programs for personnel in the company”</li></ul></li></ul></li></ul></li></ul><p id="a021709f-9006-467a-b95a-4eb48949d237" class="">
+</p><figure id="f7d373d6-e639-4c4b-a1b7-721f9cae3bb0" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2012.png"><img style="width:995px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2012.png"/></a></figure><p id="992cbf4c-40d2-40a7-8c33-64259ae9864a" class="">Example of characteristic of Systematic management domain</p><figure id="bf724668-4bd5-4f46-8e89-5ecdaa9fa225" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2013.png"><img style="width:999px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2013.png"/></a></figure><p id="351137f3-bfcd-4a99-af31-cadbbd8a83f9" class="">
+</p></details></li></ul></li></ul><h3 id="871ba3aa-0715-4101-8dac-602422ce689b" class="">Nem annyira jók:</h3><ul id="f689c9a4-c158-4af7-8635-d63762513b34" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Maturity Models in the Age of Industry 4.0 </span><p id="f5e0e2cb-ec49-46f3-8b4d-f00d8a4d375b" class="">NOTE: manufacturing industry focused</p></li></ul><ul id="722a16f6-fa80-451f-9004-f05fe552732c" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Digital Maturity - Definition and Model</span><ul id="7a7687b1-f84d-428d-a12a-541c77e2f5b5" class="toggle"><li><details open=""><summary>NOTES: (Industry focused)</summary><figure id="96170764-a162-43cd-a6ad-f7f04eac0eb3" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2014.png"><img style="width:1428px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2014.png"/></a></figure><ul id="fa7004d1-42c2-4420-ad8c-e2a968c2b571" class="bulleted-list"><li>“Beginners” – don&#x27;t have a digital transformation strategy: they either collect and analyze information on its development or do not intend to develop a digitalization strategy at all. This is a traditional type of organization, it is difficult for them to make changes in business
+processes, management may not be aimed at managing a modern organization, staff may not have the necessary skills to work with modern technologies, the technical equipment of the organization may also not allow digitalization of the business.</li></ul><ul id="2034b01d-0170-46f5-ac8e-f30a4eddaed0" class="bulleted-list"><li>“Catching-ups” – organizations of this type are only going to develop a strategy for digital transformation, they are aware of its need, but do not have it. Management is visionary, they are aware of the need for change and are ready for it, as well as employees. The company either has the necessary technical equipment or is ready to purchase it.</li></ul><ul id="385831bf-5427-4484-8e3d-2c04f99fe4d5" class="bulleted-list"><li>“Off-track” – have a digitalization strategy, but have difficulty implementing it. Management wants to change the organization to meet the demands of the times. On the path to successful digitalization are problems associated with human resources, mathematical and technical supply,
+digitization of data, etc.</li></ul><ul id="f597eef1-8de0-4366-bbea-e0209767b393" class="bulleted-list"><li>“Leaders” – have a digitalization strategy and implement it. Usually, these are modern organizations that have a business model that has been modernized and adapted to
+the age of digitalization. The management has a leadership type of thinking that leads the organization to success. The organization has the necessary technical base, employees
+have the necessary skills and competencies to work with it.</li></ul></details></li></ul></li></ul><ul id="5eb4d9cb-48f4-4340-9b6f-8e8def524581" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><a href="https://www.dpc.sa.gov.au/responsibilities/ict-digital-cyber-security/toolkits/digital-transformation-toolkit">Digital transformation toolkit [Government of South Australia]</a></span><figure id="701721b7-c211-43c6-8ab3-1b45bed82b84"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Digital_Maturity_-_Definition_and_Model.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a88d1938-4025-409a-87aa-f586768aad95/Digital_Maturity_-_Definition_and_Model.pdf</a></div></figure><ul id="fa87e97c-c26f-4317-9918-3e33f76cbae6" class="toggle"><li><details open=""><summary>NOTES: (this is for governments, but one slide is useful)</summary><p id="953a42d7-5684-44d5-aa42-dc41d5d2ad21" class="">This is how we explain why putting the same questions we ask to an online form is only digitization, and not digital transformation.</p><figure id="72e158aa-d581-410e-b690-b33081ee16dc" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2015.png"><img style="width:1068px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2015.png"/></a></figure></details></li></ul></li></ul><ul id="60a4688b-128d-450d-b78c-e9aec5971f2f" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">The digital transformation triangle. A framework to set the foundations for a successful digital journey</span><figure id="a3490fda-364d-4e69-b4e8-0506ea4baf3b"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Bazan_Martinez_Jon.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/daa693e2-f043-4625-bd34-a3e4cf9e5b24/Bazan_Martinez_Jon.pdf</a></div></figure><ul id="f84fa043-8d90-40c9-813d-2a1771da1190" class="toggle"><li><details open=""><summary>NOTES: (Elég gyenge papír, proceed with caution)</summary><figure id="15f36cac-f7d3-4275-ace0-e6b388778ffa" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2016.png"><img style="width:1192px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2016.png"/></a></figure></details></li></ul></li></ul><ul id="d452399a-27b5-445d-ba26-91f30a96f8f1" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Digital maturity variables and their impact on the enterprise architecture layers</span><figure id="2fc2920d-f6a5-4fc2-b928-be66f289a6a7"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Digital_maturity_variables_and_their_impact_on_the_enterprise_architecture_layers.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2fe721b2-47c8-42b8-bc10-0ed7279fb5cb/Digital_maturity_variables_and_their_impact_on_the_enterprise_architecture_layers.pdf</a></div></figure><ul id="3b77226b-e64c-400f-801a-0214c1985b7b" class="toggle"><li><details open=""><summary>NOTES: (Paper isn&#x27;t, but appendix is useful)</summary><figure id="7e877fcb-dff5-43aa-89f4-fb3db74822e1"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/appendix.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9cab616d-c43f-457f-b2c6-c74ad92b363c/appendix.pdf</a></div></figure></details></li></ul></li></ul><ul id="4fc559e1-2c54-45e5-9b5d-2bec366645c3" class="bulleted-list"><li><a href="https://research.aimultiple.com/what-is-digital-transformation/">https://research.aimultiple.com/what-is-digital-transformation/</a></li></ul><ul id="f60562ee-df7e-42e9-b0f1-b18edf868be9" class="bulleted-list"><li><a href="https://research.aimultiple.com/banking-dx/">https://research.aimultiple.com/banking-dx/</a></li></ul><ul id="7a8c2cf6-1aad-4199-927c-ff60196768dc" class="bulleted-list"><li><a href="https://runfrictionless.com/blog/top-5-digital-transformation-frameworks-2020/">https://runfrictionless.com/blog/top-5-digital-transformation-frameworks-2020/</a></li></ul><ul id="b7e36829-108e-4f37-9345-6acd023e643f" class="bulleted-list"><li><a href="https://www.bain.com/insights/digital-transformation-roadmap/">https://www.bain.com/insights/digital-transformation-roadmap/</a></li></ul><ul id="b1cfcef0-c400-43fc-b2b3-7ee07cec649e" class="bulleted-list"><li></li></ul><figure id="6d94d99b-ccd6-4fdc-ace2-c396467ad92f"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/978-3-030-42250-9.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ec4dd3e3-068b-4a00-9bfa-669619d49099/978-3-030-42250-9.pdf</a></div></figure><p id="a11378fe-191c-4f92-9021-a0a8f37dce76" class="">Digital Transformation Readiness Survey:</p><figure id="15f93dad-3b74-4327-a2c9-826732dad96a"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Digital-Transformation-Survey-Report.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e533f958-692e-4584-96a8-45dee1828f57/Digital-Transformation-Survey-Report.pdf</a></div></figure><p id="052a4ffa-d2d7-4c67-890f-33cebb12bbec" class="">
+</p><blockquote id="4edcb2af-801f-42f3-bb5e-9d8154d2a7e4" class="">&quot;The majority of the investigated models <strong>does not provide the opportunity for a self-evaluation</strong>, since they are not described in full detail or necessary tools are not publically available. Thus, in most cases a <strong>management consultancy has to be mandated in order to conduct the assessment for the company</strong>&quot; - &quot;How digital are we? Maturity models for the assessment of a company’s status in the digital transformation&quot; </blockquote><div id="518d05de-91e3-490a-a3f2-413b80d299ab" class="collection-content"></div><p id="28df836b-827d-4363-939d-d7840f18452a" class="">
+</p><figure id="627fc7c2-27fd-41dc-a4e8-82a23cb1342c"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/The_Forrester_Wave__Digital_Business_Transformation_Services_Q4_2020.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/005f45b1-0a1f-44b2-a43c-88fd09ce9a9b/The_Forrester_Wave__Digital_Business_Transformation_Services_Q4_2020.pdf</a></div></figure><p id="74921bfe-c22c-44b9-a146-911a32496566" class="">Done:</p><ul id="55eda368-ce28-4672-aeb4-c81d18b9b3f7" class="toggle"><li><details open=""><summary>Gartner - maturity levels, dimensions with descriptions, initiatives for each dimension*level</summary><figure id="f0785c23-9975-41a0-b381-c3774de4cded"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Gartner-Digital-Business-Maturity-Model-Cross-Industry-V2-1-.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6830bf51-d2f4-48fa-a149-d8322020a0d8/Gartner-Digital-Business-Maturity-Model-Cross-Industry-V2-1-.pdf</a></div></figure><figure id="c9a8e68d-5dad-4784-aeb0-7dce9af4e836"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Gartner.xlsx">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1473e2a7-df73-4835-abfa-2a2a355f36f9/Gartner.xlsx</a></div></figure></details></li></ul><ul id="137ac1ac-df72-46b6-b557-023a51282392" class="toggle"><li><details open=""><summary>PwC - 2017 - maturity stages (matrix), indicators with description, scorecard with questions</summary><ul id="e5e8fac2-a6ef-40ef-8a97-697bb3444000" class="bulleted-list"><li><a href="https://www.pwc.com/us/en/library/digital-iq.html">2020 Global Digital IQ</a></li></ul><ul id="64e6eb47-48e2-48a9-a45d-1ebbc2f264a9" class="toggle"><li><details open=""><summary>NOTES</summary><p id="9da62b75-e244-40f9-9555-caae1fb910c6" class=""><strong>Digital maturity model</strong>: the extent to which a digital transformation process is explicitly defined, managed, measured and continuously improved. </p><p id="95e1731f-fb70-4bd4-bf8a-9e5ae48c8788" class=""><strong>Maturity models are used by managers in three key ways:</strong></p><p id="a3d97731-14b5-4c41-8dfa-23208e9826cf" class="">DESCRIPTIVE USE</p><ul id="a90636f7-5e94-48e5-8985-13c89f1e315a" class="bulleted-list"><li>To assess the ‘as-is’ state of particular organisational capabilities</li></ul><ul id="0e67f357-4dc1-4c3f-a363-8bde6e66e173" class="bulleted-list"><li>As a diagnostic tool</li></ul><ul id="e00eb83a-56c2-4f02-bf51-3ff89e9fb9c2" class="bulleted-list"><li>To report maturity levels to internal and external stakeholders</li></ul><p id="7cc9bca4-1548-49e5-a743-b4705f083979" class="">PRESCRIPTIVE USE</p><ul id="3cc3bf31-c78e-4ae1-9ec8-1d44277993b5" class="bulleted-list"><li>To identify desired maturity level and receive guidance on how to improve from
+current maturity level</li></ul><ul id="92422b3a-78fb-4de0-aec8-62e652ac11bb" class="bulleted-list"><li>To follow specific and detailed courses of action</li></ul><p id="4ffa714b-89c1-4412-8757-5d0770341d6f" class="">COMPARATIVE USE</p><ul id="1a4ac36b-e859-43ac-a645-96629e8fe9b5" class="bulleted-list"><li>To compare performance of the organisation through internal or external
+benchmarking</li></ul><p id="3f113c3a-3ce0-4b35-bc72-18d6af3711bf" class="">Stages of Digital Maturity</p><figure id="86f615e3-a812-4710-809b-879ca787e80b" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2017.png"><img style="width:683px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2017.png"/></a></figure><p id="8f992dbb-8faf-45c6-9e96-5f61fee22723" class=""><strong>Digital Impact:</strong></p><p id="54e8c5a0-0af0-444e-97ba-dbe1a0b39d4b" class="">1. Vision
+2. Leadership
+3. Governance
+4. Innovation Culture
+5. Value Alignment
+6. Business Agility
+7. Revenue Resilience</p><p id="d520220c-3f6d-4d4b-8245-3b39bc099c85" class=""><strong>Digital Capability</strong></p><p id="632f890f-488f-493c-9a2d-2755e067119b" class="">1. Strategy
+2. Digital Infrastructure and Platforms
+3. Risk Management
+4. Talent and Skills
+5. Customer Experience design
+6. Business Ecosystem Design</p></details></li></ul><p id="48888885-bec1-4a0b-859d-111fc21626c8" class="">Description and scorecard:</p><figure id="fb95af59-53c4-403a-b2c2-25f5e881efbf"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/DIGITAL-MATURITY-MODEL-PART-A.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/540e3ed8-e40b-4182-a5e6-85ef2bdcfa48/DIGITAL-MATURITY-MODEL-PART-A.pdf</a></div></figure><p id="be3c8441-05a4-4ace-a946-60a64471d668" class="">Methodology and more details</p><figure id="500a048e-2da2-46f6-b4d1-1bf2aee080fd"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Digital-Business-Part-B.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/46fe5db2-59cb-4915-a9ae-0664f4641610/Digital-Business-Part-B.pdf</a></div></figure></details></li></ul><p id="edfacbe0-ef7d-4cc4-be3c-514039b9c1f8" class="">
+</p><ul id="0fa045d0-0109-43a6-b7c1-dc79ade3b174" class="toggle"><li><details open=""><summary>Accenture - categories to focus on with descriptions + banking maturity questions</summary><ul id="2130ba34-75c7-4cd9-821d-2facd23bdb9f" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Accenture, “Digital Industry 4.0 Diagnostic”, 2018, available from: <a href="https://www.accenture.com/il-en/insight">https://www.accenture.com/il-en/insight</a> -industrial-internet-things, accessed 09 June 2018. - Maturity Models in the Age of Industry 4.0 - INDUSTRY</span></li></ul><ul id="ad53726f-9d14-4643-8bbd-beea8af8b0fe" class="bulleted-list"><li><a href="https://bankingblog.accenture.com/digital-maturity-covid-19-resilience-strategy">https://bankingblog.accenture.com/digital-maturity-covid-19-resilience-strategy</a><figure id="5a33545c-78dc-47f1-98d0-9f0fb161d298"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Accenture-10-Questions-To-Assess-Digital-Banking-Maturity.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f76d9627-97fb-4116-850d-e2b8c8be5f37/Accenture-10-Questions-To-Assess-Digital-Banking-Maturity.pdf</a></div></figure><ul id="50c72f16-357b-4e53-b5e0-6a88d2209e0f" class="toggle"><li><details open=""><summary>Innovation Maturity Index Framework</summary><p id="dce1f6d0-f012-4744-aad9-ad49c7845311" class=""><a href="https://www.accenture.com/_acnmedia/PDF-90/Accenture-Innovation-Index-2018.pdf">https://www.accenture.com/_acnmedia/PDF-90/Accenture-Innovation-Index-2018.pdf</a></p><p id="47b7af16-4966-497b-813d-9888e4786e03" class=""><a href="https://www.accenture.com/_acnmedia/pdf-101/accenture-saudi-arabia-innovation-index.pdf">https://www.accenture.com/_acnmedia/pdf-101/accenture-saudi-arabia-innovation-index.pdf</a></p><figure id="7736e7ea-3e89-49d7-a167-4bd98daac158" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2018.png"><img style="width:988px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2018.png"/></a></figure><p id="a22d3cac-19ed-4a07-834a-bb327bb1f1fd" class="">Innovate by Design:</p><ul id="71ad4275-0ff2-4604-a3e2-fababb937736" class="bulleted-list"><li><strong>Strategy</strong>. Successful innovators share a similar approach to innovation strategy. They aim for disruptive advances, rather than incremental improvements. They build concentrated innovation functions, rather than dispersed teams. They balance innovation between old and new and make sure innovation is quantifiable.</li></ul><ul id="12150237-6a57-47db-9de2-c4af672e3a3a" class="bulleted-list"><li><strong>Culture</strong>. Companies that succeed in innovation have a culture of innovation in which creativity is encouraged and rewarded. Ideation is applauded by managers. One of the most important aspects an enterprise requires to create value for their clients is an innovation culture. Innovative ideas will thrive if the company focuses on their culture</li></ul><ul id="df852d5d-62e0-4cb1-b805-f404eb3c53b7" class="bulleted-list"><li><strong>Architecture</strong>. Building the innovation architecture—the actual processes that are used to find ideas and bring them all the way to full-scale innovations— is one of the strengths of the Innovation Champions. A well-designed innovation architecture specifies clear processes for moving innovation from ideation through R&amp;D to mass-market commercialization, employing a combination of internal and external innovation capabilities. Innovation champions are [...] are more likely to seek opportunities to pilot and test product ideas with end users.<figure id="8f4282e7-9600-4eee-a508-8f87b3e217ed" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2019.png"><img style="width:442px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2019.png"/></a></figure></li></ul><p id="5f5193ee-b8b3-4161-83da-5243d7d94fc5" class="">Innovation practices:</p><ul id="79f788bb-9a79-4fe5-972f-22687a354f06" class="bulleted-list"><li><strong>Data-driven</strong>. Innovation champions generate, share, and deploy data to support innovation. They use advanced analytics to discover insights and make recommendations—identifying places to cut costs, for example—and to anticipate future demand. They also use data to guide customer interactions and customize offerings.</li></ul><ul id="bd9bd796-1202-4161-8db6-19c5825a23e5" class="bulleted-list"><li><strong>Hyper-relevant</strong>. Innovation champions strive to always be relevant by sensing and addressing customers’ changing needs. One way in which they stay hyper-relevant is by collaborating with customers during innovation to identify the most high-potential ideas. These companies also use design thinking to create products and services that create great customer experiences and employ data analytics to personalize customer interactions.</li></ul><ul id="bc33f761-ccdb-4281-87a1-2a30ad4e6dd0" class="bulleted-list"><li><strong>Talent Rich</strong>. Innovation champions create a new type of workforce— flexible, augmented, and adaptive—to gain a competitive advantage in fast-changing markets. This means using a combination of permanent and temporary resources and adopting tools such as artificial intelligence (AI) to offload routine tasks. Innovation champions also invest in developing championship capabilities to manage innovation and disruption, mix employees and contractors in a “liquid” workforce, and deploy talent in agile inter-disciplinary teams to tackle problems and innovate.</li></ul><ul id="b89b71de-bccd-4dbd-a47f-914e45f2cece" class="bulleted-list"><li><strong>Asset smart</strong>. Innovation champions adopt intelligent asset- and operations-management approaches to run businesses as efficiently as possible and free up capacity for innovation. These companies use advanced tools to optimize asset utilization and intelligent process automation, combining basic process redesign with AI and robotic process automation. To accelerate innovation, they use corporate venture-capital funds and in-house incubators.</li></ul><ul id="3958fea0-5420-4fdd-a3c1-5220840b8e2c" class="bulleted-list"><li><strong>Inclusive</strong>. Innovation champions take an inclusive approach to innovation and governance, involving a broad range of stakeholders. This might involve, for example, working with ecosystem partners to develop a responsible supply chain or adopting blockchain to increase transparency. Inclusion could also include open platforms that allow third parties to make money (an app store, for example) or developing services that address customer needs for social interaction.</li></ul><ul id="5bea2492-ad13-4eac-ab03-489340e240c8" class="bulleted-list"><li><strong>Network-powered</strong>. To bring the best innovations to their customers, champions strive to harness the power of a carefully managed ecosystem of partners. This might include investments in processes that facilitate the flow of ideas from outside the company or using digital technology to offer products “as a service.”</li></ul><ul id="ebcb5304-d39e-4c09-a4a0-05d376514b3d" class="bulleted-list"><li><strong>Technology-propelled</strong>. Innovation champions master leading- edge technologies that enable business innovation. Companies that are good at innovation are serious about the tools they use. This starts with ensuring that top champions are advocates for adoption of new technologies. Top companies also make bigger investments in technology than peers and they build technology platforms for collaboration.</li></ul><figure id="a1d4d37d-e511-4768-ad84-8a49373edf50" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2020.png"><img style="width:631px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2020.png"/></a></figure><p id="791844a4-c102-43bd-a591-98c1957c846f" class="">
+</p></details></li></ul></li></ul></details></li></ul><ul id="83321f75-f45c-48af-859b-23805c74f1ab" class="toggle"><li><details open=""><summary>KPMG - categories to focus on with descriptions</summary><p id="6c0b1b0b-9f32-44e0-92f8-4808d096cad4" class="">See this for more details (than in Excel) on categories</p><figure id="a7ceab07-077d-4aae-b4a0-f40b9f67245d"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/measuring-digital-business-aptitude.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/af8e11d0-2c98-430d-a229-86521a741674/measuring-digital-business-aptitude.pdf</a></div></figure><ul id="8e0b418a-3649-4659-84af-445fc0dbe093" class="bulleted-list"><li>online tool: <a href="https://digital-maturity.kpmg.ca/">https://digital-maturity.kpmg.ca</a></li></ul><ul id="a45e4a34-0e86-49a2-afd4-0ff43fc9d256" class="bulleted-list"><li><a href="https://assets.kpmg/content/dam/kpmg/sa/pdf/2020/digital-transformation-playbook.pdf">https://assets.kpmg/content/dam/kpmg/sa/pdf/2020/digital-transformation-playbook.pdf</a></li></ul></details></li></ul><ul id="afcc8966-1b57-40c4-93fc-e708ee09b47c" class="toggle"><li><details open=""><summary>BCG – Digital Acceleration Index (DAI) - categories for banks, but not much details</summary><ul id="86b4ac07-e73e-4202-aa26-dedb5f71d92f" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><a href="https://www.bcg.com/capabilities/digital-technology-data/digital-maturity">BCG (2016) Digital Acceleration Index</a></span></li></ul><figure id="5cf1c43f-ef48-44e4-a411-6e50be1576fe" class="image"><a href="https://www.energytoday.net/wp-content/uploads/2017/09/Beyond-the-Hype-ex-2_tcm-164039-1-768x484.jpg"><img src="https://www.energytoday.net/wp-content/uploads/2017/09/Beyond-the-Hype-ex-2_tcm-164039-1-768x484.jpg"/></a></figure><figure id="20cd0cdb-20b5-4058-bd5b-9e5aeb3aceb2" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2021.png"><img style="width:872px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2021.png"/></a></figure><ul id="9a075836-74e9-4cbc-82a7-4fbb5a4135a6" class="toggle"><li><details open=""><summary>How digital champions Invest - Infographic</summary><figure id="6e77c7b2-1f86-4791-b513-938b7d9cdb5a" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2022.png"><img style="width:2880px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2022.png"/></a></figure></details></li></ul><figure id="c819caa9-0abe-4054-ad87-ef343bbaa48f"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/BCG-Its-Not-a-Digital-Transformation-Without-a-Digital-Culture-Apr-2018_tcm20-207937.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5d68881f-a32d-43ad-8516-a21096be0474/BCG-Its-Not-a-Digital-Transformation-Without-a-Digital-Culture-Apr-2018_tcm20-207937.pdf</a></div></figure><p id="cebf5acf-f335-4506-9f4a-d4d1a1043ed3" class="">Login required: <a href="https://dai.bcg.com/">https://dai.bcg.com</a></p><ul id="36bee78f-301a-4e8e-9266-be01ed16343e" class="toggle"><li><details open=""><summary>Digital Marketing Maturity</summary><ul id="e5086d40-95bc-4199-9e47-63f30c459ea2" class="bulleted-list"><li><a href="https://digitalmaturitybenchmark.withgoogle.com/en/advertisers/">https://digitalmaturitybenchmark.withgoogle.com/en/advertisers/</a></li></ul><figure id="c543f6e4-c88d-4e0e-9ccf-61fe6c12b2b3"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/BCG-Mastering-Digital-Marketing-Maturity-Feb-2018_EN_WGk5Tbl.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/35f73a78-d702-4f21-bca0-cf96522371b0/BCG-Mastering-Digital-Marketing-Maturity-Feb-2018_EN_WGk5Tbl.pdf</a></div></figure></details></li></ul></details></li></ul><ul id="3e1b54af-551d-423b-adbb-698e54bb5cec" class="toggle"><li><details open=""><summary>(✓) BCG x IDMA (Singapore) - maturity stages, indicators (see Excel Table)</summary><figure id="6b9d7a17-6345-4b72-9097-a088a27e6a3a"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Factsheet_Digital_Aceleration_Index.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/faf45985-8c25-43ef-acc5-1d8fa9be563d/Factsheet_Digital_Aceleration_Index.pdf</a></div></figure></details></li></ul><ul id="96618491-463e-483c-9e08-cca47dc1a0e6" class="toggle"><li><details open=""><summary>(✓) IWI-HSG and Crosswalk (2015) - maturity stages, indicators (see Excel Table)</summary><ul id="314d3f27-a71c-4de7-ba79-33b304b107a3" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">&quot;How digital are we? Maturity models for the assessment of a company’s status in the digital transformation&quot; pp. 8-10</span></li></ul></details></li></ul><ul id="7016c8f5-9cf6-48a7-9b52-f209866f3dbd" class="toggle"><li><details open=""><summary><del>PwC - 2016 / Industry 4.0</del> NOT FOR US</summary><ul id="2b19d2ef-e61d-413c-995d-a5216262eb57" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">&quot;Comparition of Select Digital Maturity Models for Digital Transformation Dynamics&quot; pp. 4839-4841 + Table 2 pp. 4851-52</span></li></ul></details></li></ul><ul id="7abd9aae-09f5-4484-825a-1dcb0245b78c" class="toggle"><li><details open=""><summary>EY - Categories, but mostly just buzzwords</summary><ul id="4b968e25-5eec-4aff-9ad2-06f841ce20fe" class="toggle"><li><details open=""><summary><strong>Framework</strong>:</summary><figure id="01618093-bf40-41e0-86fd-9e47f32a4907" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2023.png"><img style="width:1782px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2023.png"/></a></figure><figure id="a7bc7667-94ce-438e-a70b-e908ad730189"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/EYs_transformation_framework.xlsx">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/17b6d171-c5c7-41b8-a12c-ead7086d2c3b/EYs_transformation_framework.xlsx</a></div></figure></details></li></ul><p id="c0ec8bad-9e0e-4b95-99bf-499c3a7946e7" class="">paid one: <a href="https://digitalreadiness.ey.com/">https://digitalreadiness.ey.com/</a></p><p id="ef5857a1-755e-4a71-b95d-ecc90e7473b3" class="">free one: <a href="https://digitalmaturitycheck.ey.com/">https://digitalmaturitycheck.ey.com</a></p><ul id="d3b86a47-7795-4f0e-b0e9-faf16d6c95a2" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><a href="https://images.forbes.com/forbesinsights/StudyPDFs/Final_Report_Insurance_in_a_digital_world_15_october.pdf">https://images.forbes.com/forbesinsights/StudyPDFs/Final_Report_Insurance_in_a_digital_world_15_october.pdf</a></span></li></ul><ul id="dac256ae-10b3-45db-be0a-e26b4c1e4c7b" class="toggle"><li><details open=""><summary>NOTE: Some digital questions to consider (p. 39)</summary><figure id="fad314e8-b58f-4fed-afcb-b4dd53a6db4d" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2024.png"><img style="width:507px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2024.png"/></a></figure></details></li></ul><ul id="770802f0-71e0-47ce-98bb-7512701aae71" class="bulleted-list"><li>EY’s Digital Maturity Model tracks digital capabilities; companies rate themselves against a set of defined multiple-choice answers on a scale of 1–5, with 1 as basic, 3 good and 5 leading.</li></ul><figure id="d491a5b4-c9d6-4ebb-8cd9-42c1e4f57e7c"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/ey_digital_directions_eyg_no_005836-19gbl.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/266a0dc7-2b59-4280-bce1-446d43a5466e/ey_digital_directions_eyg_no_005836-19gbl.pdf</a></div></figure><figure id="5323209a-7b37-4fd9-a852-1b90efb774e7"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/ey-is-your-business-transforming-its-technology-or-is-technology-transforming-your-business.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9353df1a-69ef-4156-8da2-0995f61b98f9/ey-is-your-business-transforming-its-technology-or-is-technology-transforming-your-business.pdf</a></div></figure></details></li></ul><ul id="1722d7b0-0ea1-4d1b-90ff-31d1b23486f3" class="toggle"><li><details open=""><summary><del>Bain</del> - They don&#x27;t have DMMs</summary><p id="8c7748f8-12bf-4904-8075-fc6cb7c962bd" class=""><a href="https://www.bain.com/vector-digital/radar-360-gps-tool/">https://www.bain.com/vector-digital/radar-360-gps-tool/</a></p></details></li></ul><ul id="53e09dd8-1718-49bf-bc1f-6228e3875a48" class="toggle"><li><details open=""><summary><del>IDC</del> - Not much info, and doesn&#x27;t seem useful</summary><p id="daab8383-6735-4df9-95e7-a8cd543ee8f4" class="">Level:</p><ul id="06990a55-8946-4d59-a7ef-fb9d6d946da3" class="bulleted-list"><li>Ad Hoc – Digital Resister</li></ul><ul id="bfb68629-2911-4787-8e6f-66b8b73f6ff3" class="bulleted-list"><li>Opportunistic – Digital Explorer</li></ul><ul id="0d743293-a4cc-465f-a9e5-25ea0752cda2" class="bulleted-list"><li>Repeatable – Digital Player</li></ul><ul id="0a01182f-474f-4bf5-8186-43841bbbe60c" class="bulleted-list"><li>Manager – Digital Transformer</li></ul><ul id="909f75a9-970a-4b2d-9921-bd57994e29de" class="bulleted-list"><li>Optimized – Digital Disruptor</li></ul><figure id="70e948d5-698a-47d7-b695-7c9abaffce64" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2025.png"><img style="width:793px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2025.png"/></a></figure><p id="34b75778-fad8-4054-a5ff-68958fa06a83" class="">
+</p><ul id="05955b0b-9155-4c27-82c7-9688ec28ac58" class="bulleted-list"><li>Leadership Digital Transformation<ul id="0253e0ca-da3a-4ca9-b9f9-8bbc92e9e3a5" class="bulleted-list"><li>Ecosystem Awareness and Insight</li></ul><ul id="009f2158-e2d9-4269-8a58-48501d8307af" class="bulleted-list"><li>Business Model Innovation</li></ul><ul id="ca4240fa-a269-488d-9495-8d55e25a9dc6" class="bulleted-list"><li>Organizational and Cultural Disruption</li></ul><ul id="c3a7e733-ae64-4d97-9686-74805f08fe44" class="bulleted-list"><li>Agile Planning and Governance</li></ul><ul id="6b590957-87be-4045-89b8-85eae4d68259" class="bulleted-list"><li>Financial and Economic Leverage</li></ul></li></ul><ul id="00d51567-fccd-481d-af8b-e88edca99753" class="bulleted-list"><li>Omni-Experience Digital Transformation<ul id="d7553639-46bb-4019-8ca7-b8a1218a9573" class="bulleted-list"><li>Ecosystem experience</li></ul><ul id="3e05a907-d72d-4eb0-a502-56e95ab5bc61" class="bulleted-list"><li>Continuous innovation orientation</li></ul><ul id="0cd21d5e-8a5c-4831-962f-de8126578068" class="bulleted-list"><li>Platform service delivery</li></ul><ul id="501b43b5-c8cb-494c-bfc2-afdfb17c275d" class="bulleted-list"><li>Omni-dimensional marketing</li></ul></li></ul><p id="f07ec01f-96c1-47af-8d58-f2fb54975632" class="">WorkSource Digital Transformation</p><ul id="7ade358e-ca5f-4456-965c-5d54da3955d9" class="bulleted-list"><li>Manage talent</li></ul><ul id="cafcf9c2-be73-47f4-8887-2b909481d567" class="bulleted-list"><li>Source talent</li></ul><ul id="c554e4ca-e506-47a7-8627-a747811ce74d" class="bulleted-list"><li>Optimize work</li></ul><ul id="da98a47f-723b-42a5-a9f3-526e46ad72b7" class="bulleted-list"><li>Facilitate a digital transformation mindset</li></ul><p id="300b0287-fc65-4170-aaf4-a93c4f265f9b" class="">Operating Model Digital Transformation</p><ul id="9ffd87a9-e252-4394-81e3-402ca2592490" class="bulleted-list"><li>Connected products/services</li></ul><ul id="5881cc50-6afb-4712-b4fe-8214f0b9663b" class="bulleted-list"><li>Connected assets</li></ul><ul id="22cda412-7488-4754-8d13-9f5b3fde5424" class="bulleted-list"><li>Connected processes</li></ul><ul id="325734f0-5e04-4e52-88c2-b73d0afb90e3" class="bulleted-list"><li>Decision making</li></ul><ul id="2378ac03-c0d9-4258-932c-86ae391b1c9f" class="bulleted-list"><li>Organizational structure</li></ul><p id="e5c52ba1-1aa5-43c5-aeaf-1b6a9047346a" class="">Information Digital Transformation</p><ul id="d01d4a2a-d3e1-4de6-806a-06be698f4012" class="bulleted-list"><li>Data Discovery</li></ul><ul id="e252dfbb-82c9-40c5-ad92-d35c707d4758" class="bulleted-list"><li>Value Development</li></ul><ul id="7aa3d28d-f2e6-4098-a7d9-183aaf3cea13" class="bulleted-list"><li>Value Realization</li></ul><ul id="0e191f01-45ec-4207-a3f1-b947dfa0b92c" class="bulleted-list"><li>Information Architecture</li></ul><ul id="e440309d-6749-4cde-a960-70ba7873794b" class="bulleted-list"><li>Knowledge and Collaboration</li></ul><ul id="87420ccb-1dc2-4421-94ec-a6a6e7b6e174" class="bulleted-list"><li>Information Architecture (IA)</li></ul><figure id="7a9e145a-116e-461a-9b60-918e3cf74c61"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/DX_UBER.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6bcc3843-826c-4926-8eb6-9382df499176/DX_UBER.pdf</a></div></figure></details></li></ul><p id="72cc2a43-7757-4ac1-9531-5fd83adb3572" class="">
+</p><p id="90b2d94f-d1c2-4b9e-908d-5f3f8f8acda3" class="">
+</p><ul id="dc1c028d-de19-4033-a7c6-c055e0c05aa1" class="toggle"><li><details open=""><summary>Deloitte/TM Forum - Digital Maturity Model (DMM)</summary><ul id="10b83fd0-f3f3-4766-9704-3dbc8718b54d" class="toggle"><li><details open=""><summary>&quot;Comparition of Select Digital Maturity Models for Digital Transformation Dynamics&quot; pp. 4842-4843+ Table 2 pp. 485-53</summary><p id="78cbe1c8-1278-44d5-a714-5b6d9f30e583" class="">Planning for a digital future means adapting digital expertise in which an
+organization’s culture, people, and structure are working towards achieving
+company’s objectives (Kane et al., 2016). Deloitte proposed a digital maturity
+model in partnership with TM Forum. This model is the tool that is used for
+determining digital maturity according to industry standards. The core
+dimensions included in this digital maturity model are namely customer,
+technology, strategy, operations, and organisation &amp; culture. The framework
+allows communication service providers to be evaluated on the basis of two
+dimensions. These dimensions are digital service enablement and digital
+services provisioning (Newman, 2017).</p><p id="093e6aba-3bdc-4f2d-b56c-8e90ee7c3661" class="">In this digital maturity model, the company is represented in a 2x2 matrix
+segregating four types of digital maturity levels.</p><p id="95222a21-46be-47bd-9f78-00cfd640d52e" class="">The five levels of digital maturity:
+1. Initiating: </p><p id="d9105a52-42a3-4aad-a297-4d4adcb97dac" class="">In this level, organizations are in the nascent stage and have
+just started to be assimilated into some of the business operations.
+2. Emerging: </p><p id="b20f289d-88a1-4ee2-b2fe-a6fb5c035025" class="">In this level, organizations are in an advanced stage and
+beginning to be included into all operations that are performed on the daily
+basis.
+3. Performing: In this level, organizations have set clear goals and
+objectives, formulated a plan, and implement agility throughout all the
+departments of the company.</p><p id="56af871c-53cd-48aa-98ef-e51ae2d6136f" class="">4. Advancing: In this level, organizations are expected to expand their plans
+and objectives to bring new and innovative ideas and strategy to advance their
+capabilities in the area.
+5. Leading: In this level, organizations are considered as thought leaders in
+the domain and lead the industry.</p><p id="5c9747dc-53d1-48fc-9a92-25b6c21d05ed" class="">Understanding the 5 core dimensions of Deloitte/TM Forum Model:</p><p id="0ac22fc0-55c1-4c02-916f-4d335c27ce83" class="">1. Customer: One of the most important dimensions, which emphasises on
+enhancing customer experience, improve customer engagement, analysing
+customer behaviour, and build a digital trust with customer. Building customer
+loyalty by providing customers with services such that customers see the
+organization as their digital accomplice.</p><p id="e84825f7-df8c-452f-adce-972d657f2d66" class="">2. Strategy: The most important dimension of this model, which focuses on
+having a competitive edge over other companies in the industry, by taking
+digital initiatives and building an effective business strategy. This includes
+strategy in key areas such as brand management, finance &amp; investment,
+stakeholder management, ecosystem management amongst many others.</p><p id="65f9759a-3190-4c11-be3a-5c71664be0ee" class="">3. Technology: This dimension pertains to the triumph of digital
+methodology by assisting with creating, process, secure, store, and trade
+information to meet the demands of customers at minimal expenses. This
+includes various sub-dimensions such as applications, data&amp; analytics,
+network, security, connected things amongst many others.</p><p id="07c1bede-a46c-4511-874c-019170246e27" class="">4. Operations: Deploying digital processes and digital business practices in
+order to drive strategic management and improve business efficacy and
+viability. This dimension includes various sub- dimensions such as agile chain
+management, real-time insights &amp; analytics, integrated service management,
+standards &amp; governance automation amongst many others.</p><p id="eb2dc4d5-e51c-4265-86c5-2f3ad98bd42f" class="">5. Organisation &amp; culture: Creating a culture within an organization with
+talent processes and governance so as to lead towards the upward digital
+maturity curve. This dimension includes sub-dimensions such as leadership &amp;
+governance, workforce enablement, talent management amongst many others.
+The action items include:</p><figure id="9cd95914-d0b2-45c1-ab73-d84b2b3c33fa" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2026.png"><img style="width:1194px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2026.png"/></a></figure><p id="b39fc051-71a8-4fb5-ab72-b4bef6514684" class="">Figure 2: Action items recommended by Deloitte Maturity Model</p><p id="a7a06872-6890-4655-90b8-7c146f1629a3" class="">
+</p></details></li></ul><figure id="78c6d29a-20be-439f-affe-84ca96973b32"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/412345124-DMM-WP-2017-Web.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/71fa8f5d-9c29-47fd-9c60-661d0c6c8524/412345124-DMM-WP-2017-Web.pdf</a></div></figure><figure id="c9deac6a-7136-4b78-9b76-12e244b4d8d8"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/deloitte-digital-maturity-model.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f50e0e45-411c-49ec-8163-73445914066f/deloitte-digital-maturity-model.pdf</a></div></figure></details></li></ul><ul id="ee7f8bac-8bd9-4586-80e8-fe07724d30c3" class="toggle"><li><details open=""><summary>Forrester</summary><ul id="d264088e-f073-4f19-a1b8-1e08441834e7" class="bulleted-list"><li>Digital Business Maturity Model 4.0 (2014)<ul id="253072ba-e1b4-4319-913d-a5402ef396b7" class="bulleted-list"><li>&quot;Comparition of Select Digital Maturity Models for Digital Transformation Dynamics&quot; pp. 4844-4845 + Table 2 pp. 4849</li></ul></li></ul><ul id="93425476-ea9e-4434-9822-45af9492631d" class="bulleted-list"><li>The Digital Maturity Model 4.0 (2016)<figure id="ba43ba32-fb62-47fa-8c99-f522bdcb09de"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Forrester-s_Digital_Maturity_Model_4.0.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4cb3a9ef-1600-4cf1-95eb-b29f1654312d/Forrester-s_Digital_Maturity_Model_4.0.pdf</a></div></figure></li></ul><p id="57ca94b9-ea4b-44d0-b530-9c2857dab142" class="">Stoianova O. V., Lezina T. A., Ivanоva V. V. (2020)</p><ul id="f72d6bb7-6a5b-4485-9776-8ec50132d7c3" class="bulleted-list"><li>The Digital Maturity Model 5.0 (2017)<figure id="8fe5c9ca-2ba3-4d8c-a849-85f8d2131f6b"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/The-Digital-Maturity-Model-5.0-1.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2ae582cd-be4e-4aeb-a58d-29eac33d429f/The-Digital-Maturity-Model-5.0-1.pdf</a></div></figure></li></ul><p id="ac564ac6-4638-4bda-a4cf-a2cc159ca909" class=""><a href="https://go.forrester.com/wp-content/uploads/2019/04/151376_1-4-1024x784.jpg">https://go.forrester.com/wp-content/uploads/2019/04/151376_1-4-1024x784.jpg</a></p></details></li></ul><ul id="87773c17-478b-44ad-af76-d84b6cb0fe79" class="toggle"><li><details open=""><summary>IBM</summary><figure id="7768ab1e-3b36-4269-8386-3e8db31971b3" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2027.png"><img style="width:744px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Untitled%2027.png"/></a></figure><p id="d0742f08-c079-437f-a8e5-349f5dddd819" class=""><a href="https://www.ibm.com/blogs/think/be-en/2017/03/15/two-sides-of-the-digital-dollar/">https://www.ibm.com/blogs/think/be-en/2017/03/15/two-sides-of-the-digital-dollar/</a></p><ul id="be508c80-d92b-4b30-858b-00d8b8e1b9a5" class="bulleted-list"><li>Big Data &amp; Analytics Maturity Model: <a href="https://www.ibmbigdatahub.com/blog/big-data-analytics-maturity-model">http://www.ibmbigdatahub. com/blog/big-data-analytics-maturity-model</a></li></ul></details></li></ul><ul id="41d3ce48-0242-4f12-934d-59f6bba46728" class="toggle"><li><details open=""><summary>The Open Group - IT Architecture focused</summary><p id="842a91ab-64b9-45f9-aca5-431b9793a517" class="">offers a list of readiness factors, which can be specified for any particular enterprise. A significant drawback of this framework is that it requires its inclusion in the general project of the company architecture development, which is not always possible at the start of transfor- mation projects. - <a href="https://doi.org/10.21638/spbu05.2020.204">https://doi.org/10.21638/spbu05.2020.204</a></p><ul id="56d8cf23-5891-49fb-9d44-7c91f1c06e13" class="bulleted-list"><li><a href="https://www.opengroup.org/it4it">https://www.opengroup.org/it4it</a></li></ul><ul id="ca5fd67c-f709-4050-bae3-072b62b38ade" class="bulleted-list"><li><a href="https://pubs.opengroup.org/architecture/togaf91-doc/arch/chap30.html">Business Transformation Readiness Assessment</a> (2018)</li></ul></details></li></ul><ul id="d7c3c8dc-ee76-463e-baf2-a8b78c978a74" class="toggle"><li><details open=""><summary>McKinsey</summary><figure id="76064fec-59d2-4e0a-89bb-28a64a905a61"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Why-digital-strategies-fail.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a2c1c443-1551-4d89-bd09-78c72f9c59a8/Why-digital-strategies-fail.pdf</a></div></figure><figure id="8c448326-e248-4768-b2cc-18c7df62d31a"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/A-roadmap-for-a-digital-transformation.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8541fb9a-786e-4cb2-b379-52c0ffe65608/A-roadmap-for-a-digital-transformation.pdf</a></div></figure><p id="d021a47e-7af4-4df0-935f-bc7596146688" class=""><a href="https://www.mckinsey.com/business-functions/mckinsey-digital/how-we-help-clients/digital-2020/our-assessments/strategy">https://www.mckinsey.com/business-functions/mckinsey-digital/how-we-help-clients/digital-2020/our-assessments/strategy</a></p><p id="acb1443b-3c7d-4188-973b-9a0aec5a65b9" class=""><a href="https://www.mckinsey.com/business-functions/mckinsey-digital/our-insights/a-blueprint-for-successful-digital-transformations-for-automotive-suppliers">https://www.mckinsey.com/business-functions/mckinsey-digital/our-insights/a-blueprint-for-successful-digital-transformations-for-automotive-suppliers</a></p><figure id="6d35c50b-36d0-4c09-80e8-67bc8885f40f"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Raising_your_Digital_Quotient-McKinsey-2015.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/15d192f6-10f7-4980-8e96-d7339dc343ce/Raising_your_Digital_Quotient-McKinsey-2015.pdf</a></div></figure><p id="6e9ca195-26f1-4641-a272-4daed2b4e425" class="">general: <a href="https://www.mckinsey.com/business-functions/strategy-and-corporate-finance/our-insights/enduring-ideas-the-7-s-framework">https://www.mckinsey.com/business-functions/strategy-and-corporate-finance/our-insights/enduring-ideas-the-7-s-framework</a></p></details></li></ul><ul id="6db2d282-a62b-433e-ab88-489c77a52af4" class="toggle"><li><details open=""><summary>MIT/Capgemini - MIT Center for Digital Business and Capgemini Consulting (2011/12) - really useful research articles</summary><ul id="7c8a5683-d61a-4320-8026-2d93369b986f" class="toggle"><li><details open=""><summary>NOTES</summary><p id="81df9c66-3406-4f9d-9af4-b8180d1c8cc0" class="">Digital Intensity - intensity of digital initiatives and possibilities</p><ul id="4fe555af-a3e9-42b0-b403-911fd205cd9d" class="bulleted-list"><li>Strategic Assets</li></ul><ul id="85c1fc2f-207a-41fd-9cc1-69aab427dd49" class="bulleted-list"><li>Internal Operations</li></ul><ul id="64c4cabf-3321-4b58-a912-58105f02af50" class="bulleted-list"><li>Digital Capabilities</li></ul><p id="32a89dbd-f8f3-474e-a0e5-784feda1f460" class="">Transformation Management Intensity - organization&#x27;s capability with regards to digital transformation</p><ul id="01614cb4-6d04-4497-acce-07cc203f1b57" class="bulleted-list"><li>Digital Vision</li></ul><ul id="f75a4dcf-f232-40d3-85d7-8425982a559b" class="bulleted-list"><li>Governance</li></ul><ul id="83fd632a-e016-49b8-ad4d-afefcc764efe" class="bulleted-list"><li>Engagement</li></ul><p id="329e745a-31e2-4dff-87cf-270a29895426" class="">Maturity levels:</p><ol id="a8eb0d79-c505-4841-90d1-931312694c68" class="numbered-list" start="1"><li>“<strong>Beginners</strong>” are still at the beginning of their digital transformation as they are immature in both dimensions. They use traditional digital means (e.g. ERP systems), but do not utilize and exploit the opportunities that advanced means offer. On the one hand, the reason for this could be that they are unaware of the possibilities of new digital technologies, skeptical regarding them or have started using them ineffectively. On the other hand, a company could also choose to be a “Beginner”. This could be owed to the type of industry (e.g. chemicals, engineering) or business relations (B2B vs. B2C) it uses to conduct its operations.</li></ol><ol id="1d91fe2d-5888-4666-9f51-92fc096e7451" class="numbered-list" start="2"><li>“<strong>Fashionistas</strong>” have tested and started to implement various digital technologies. However, they lack management skills to create a successful and sustainable digital transformation strategy. The implemented technologies do not interact with each other and therefore do not generate synergies. While “Fashionistas” may externally make a good impression, they lack substance and steadiness. The next critical challenge for them is to coordinate their digital activities in order to create an overall collective value.</li></ol><ol id="36f98041-d13a-4b9f-9268-42f18abdfc21" class="numbered-list" start="3"><li>“<strong>Conservatives</strong>”, on the contrary, describe companies, which are aware of the potential of advanced IT and are able to manage them effectively. They might be experts on the digital field and are well aware of the digital transformation necessity for the company. However, they view new technologies with skepticism. Due to their conservatism and cautiousness, they might miss out on precious chances to add value to the firm and run the danger of becoming less competitive.</li></ol><ol id="5ad4a959-b49a-47c0-84fa-c26fe731efc5" class="numbered-list" start="4"><li>“<strong>Digiratis</strong>” are the digitally most mature group of companies. They have implemented the newest digital trends and coordinate them with a strong vision and digital culture, resulting in an effective value creation. Consequently, they have a competitive advantage and outperform other companies in their industry.<figure id="2e04d884-5c86-40ac-866d-9763892c9574" class="image"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Screen_Shot_2021-03-01_at_6.27.20_PM.png"><img style="width:415px" src="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Screen_Shot_2021-03-01_at_6.27.20_PM.png"/></a></figure></li></ol></details></li></ul><figure id="066195ca-2583-487c-911f-8e5be69b36eb"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Digital_Transformation__A_Road-Map_for_Billion-Dollar_Organizations.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/906acf6e-c26b-44cd-a3af-5a37c47661d7/Digital_Transformation__A_Road-Map_for_Billion-Dollar_Organizations.pdf</a></div></figure><figure id="bc8348e6-9ffe-47f7-b322-fc5fd8fae546"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/The_Digital_Advantage__How_Digital_Leaders_Outperform_their_Peers_in_Every_Industry%201.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7f174818-aa17-45b4-878d-de712acb9322/The_Digital_Advantage__How_Digital_Leaders_Outperform_their_Peers_in_Every_Industry.pdf</a></div></figure><ul id="4ceda320-a624-48d8-8e04-76d9a26d47e3" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">&quot;How digital are we? Maturity models for the assessment of a company’s status in the digital transformation&quot; pp. 6-7 + Table 2 pp. 4850</span></li></ul><ul id="ad4f6cd7-0563-4479-8a27-c99153ee818b" class="bulleted-list"><li></li></ul></details></li></ul><ul id="25f3d398-118d-40ef-bbb6-257eb638e3fd" class="toggle"><li><details open=""><summary>TM Forum</summary><ul id="728cf2b6-7f4e-4514-8b76-1d66a9332e27" class="bulleted-list"><li><a href="https://www.tmforum.org/digital-transformation-maturity/">https://www.tmforum.org/digital-transformation-maturity/</a></li></ul></details></li></ul><ul id="8127aaec-6459-45ba-a270-454d033c9296" class="toggle"><li><details open=""><summary>Open Roads by Huawei</summary><p id="21cddc41-a701-4c16-9913-5a73c1f76e82" class=""><a href="https://openroadscommunity.com/initiative/open-digital-maturity-model">Open Digital Maturity Model</a> </p><figure id="4321d085-03fd-48e2-a92c-e540055e341f"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Digital_Mastermind_Playbook_EN_v4_20190902.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/aec8c07e-e0f8-4092-9d1c-9e889ae7b43f/Digital_Mastermind_Playbook_EN_v4_20190902.pdf</a></div></figure><figure id="d1e225b8-afcb-474b-b08a-3eb472f2de8b"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/Introduction_to_Open_Digital_Maturity_Model_for_release_V6R1.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/54248c65-adb8-4d7f-b1ac-7485375804d2/Introduction_to_Open_Digital_Maturity_Model_for_release_V6R1.pdf</a></div></figure></details></li></ul><p id="c97821ad-ef9c-4d1b-b0f6-84ea814ef540" class="">Forrester, BCG, IDC, KPMG, PWC - Notice, that all of the considered models do not contain a comrehensive assessment of the management system: they place emphasis on the automation/digitalization of business processes, but do not consider the level of their connectivity and regulaition, the company’s digital culture is analyzed only from the point of view of competencies, etc. - <a href="https://doi.org/10.21638/spbu05.2020.204">https://doi.org/10.21638/spbu05.2020.204</a></p><p id="7475ce0a-b6a8-446a-aaa7-b9d343bde05b" class="">IT Companies</p><p id="a5d954bc-a761-466d-87f8-3ec4ae1b747a" class="">assess readiness for transformation through the prism of technological readiness as a determining factor in possible directions of changes (rethinking) of a business: developing competencies, using technologies in standard activities, introducing new working methods (new quality of customer service, flexible customization to customer needs, integration with customers based on open standards), and introducing new business models. - <a href="https://doi.org/10.21638/spbu05.2020.204">https://doi.org/10.21638/spbu05.2020.204</a></p><ul id="af7ff734-9476-4dd4-823e-ce14fe6cb395" class="toggle"><li><details open=""><summary>Academic</summary><figure id="e0c7a90f-7d41-4acc-8bbe-95362f596ed3"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/C__Users_jwulf_OneDrive_Research_IWI20Forschung_PAPERS_ACCEPTED_MISQE20Digital20Service20Capability_698-1761-1-PB.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8c9a7c12-20a5-4d61-b40c-aa9f817d0842/C__Users_jwulf_OneDrive_Research_IWI20Forschung_PAPERS_ACCEPTED_MISQE20Digital20Service20Capability_698-1761-1-PB.pdf</a></div></figure><p id="cae9c4ac-3ac0-493f-af77-c6fa35a05726" class="">[Wulf, Mettler, Brenner, 2017] offers to evaluate digital readiness according to seventeen criteria clustered into seven groups (strategy, consumers, services/products, processes, management, information, technolo- gies, and infrastructure) - <a href="https://doi.org/10.21638/spbu05.2020.204">https://doi.org/10.21638/spbu05.2020.204</a></p><p id="a302d0d6-4e18-42c6-9ce9-24ec8256997e" class=""><del>[Schumacher, Erol, Sihn, 2016] was designed to assess the maturity of an industrial company and contains nine dimensions: strategy, leadership, customers, products, operations, culture, people, governance, technology. - </del><del><a href="https://doi.org/10.21638/spbu05.2020.204">https://doi.org/10.21638/spbu05.2020.204</a></del><del> - FOR MANUFACTURING</del></p><ul id="ad519be6-3a50-4fb8-8f98-d8699a88fc1b" class="toggle"><li><details open=""><summary><del>DREAMY model (Digital Readiness Assessment Maturity model) - FOR MANUFACTURING</del></summary><p id="baa3f16d-5ea5-497a-8da8-67e167c5775c" class="">[De Carolis et al., 2017] evaluates company processes grouped in five areas (Design and Engineering, Production Management, Quality Management, Maintenance Management, Logistic, Management). - <a href="https://doi.org/10.21638/spbu05.2020.204">https://doi.org/10.21638/spbu05.2020.204</a></p></details></li></ul></details></li></ul><p id="32446402-1245-454f-9c0a-ef2e79668f59" class="">
+</p><p id="accfcf04-fa21-4c22-8642-9a7e463680a4" class="">
+</p><p id="94a4b0d9-9ee9-403e-a050-7780c55755cb" class="">
+</p><p id="ad061c0c-47e4-4718-b14c-07c55ca5ce06" class="">
+</p><p id="848f1c5f-0d8a-45fb-8d37-5350481b11a8" class="">
+</p><p id="c5f4999e-e4e8-41aa-9a9f-6d45fb56815e" class="">Idea:</p><ul id="d482ea10-8d86-4d78-b2ce-8eaf0f8f818d" class="toggle"><li><details open=""><summary><a href="https://www.ted.com/talks/tom_wujec_got_a_wicked_problem_first_tell_me_how_you_make_toast/up-next">TED: Got a wicked problem? First, tell me how you make toast</a></summary><ul id="002e4d2b-3a87-4bc8-9837-91e6719de0a6" class="bulleted-list"><li>Drawing helps us understand the situations as systems with nodes and their relationships. <ul id="246323aa-111f-400e-b6be-e3ed1047f07e" class="bulleted-list"><li>Nodes + Links = System Model (how we thing something work)</li></ul><ul id="4fc84f29-dc2b-42b1-9b31-24a0f3e932fb" class="bulleted-list"><li>Drawing: complexity: number of nodes (sweet spot: 5-13)</li></ul></li></ul><ul id="31def4da-c256-4f4e-bb7f-1269eb5f9e63" class="bulleted-list"><li>Movable cards produce better systems models, because we iterate much more fluidly. <blockquote id="a1ebb1f6-2de4-43be-b18a-9019c5cb845f" class="">systems theorists do tell us that the ease with which we can change a representation correlates to our willingness to improve the model.</blockquote></li></ul><ul id="eab641c8-733e-4434-b04f-41d10a4e9c38" class="bulleted-list"><li>Group notes (creating system models with sticky notes) produce the most comprehensive models because we synthesize several points of view.<ul id="00ceddfc-60dd-4fec-ab19-2182d0ad823a" class="bulleted-list"><li>participants don&#x27;t feel map shock because they participate in the building of their models themselves.</li></ul><ul id="6cafa0fc-e72a-4766-99bd-aaecd4f28c00" class="bulleted-list"><li>ability to deal with contradictions, for example, they add branching patterns and parallel patterns</li></ul><ul id="b0599cc4-d213-4053-84c8-c4c02cd2cdf2" class="bulleted-list"><li>do it completely silently</li></ul></li></ul><figure id="89e8f446-c7b1-4e7d-82c6-4b5134686b93"><div class="source"><a href="Digital%20Innovation%2013a7252c82ab4cbba7dad99940c69fb8/DrawToast_Systems_Thinking_Guide.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/31a6fde9-3954-4970-83d3-598b159bf390/DrawToast_Systems_Thinking_Guide.pdf</a></div></figure></details></li></ul><ul id="b03310cd-01e1-42d3-a906-ed54436fbb53" class="toggle"><li><details open=""><summary><a href="https://www.ted.com/talks/martin_danoesastro_what_are_you_willing_to_give_up_to_change_the_way_we_work/up-next">TED: What are you willing to give up to change the way we work?</a></summary><ul id="99e5a107-fbae-4a08-bbb4-e470aa72ebd2" class="bulleted-list"><li>birds flying in flock<ul id="48b84b60-9247-451f-88d6-8211f7fdd0ed" class="bulleted-list"><li>with one leader, reaction speed is low</li></ul><blockquote id="4f40beda-1fad-4e54-ab4d-cc3241d34aa0" class="">Their <mark class="highlight-orange">alignment</mark> enables their <mark class="highlight-orange">autonomy</mark>, and their autonomy makes them fast and flexible.</blockquote></li></ul><blockquote id="3228ffff-1bc7-4797-87d5-c2489c89de43" class="">&quot;we need a <mark class="highlight-orange">new way of working, a way that creates alignment around purpose</mark>, that takes out bureaucracy and that truly empowers people to make decisions faster. But the question is: <mark class="highlight-orange">In order to get there, what are we willing to give up? [...] Change is not only about embracing the new; it&#x27;s about giving up on some of the old as well.&quot;</mark></blockquote><ul id="f9c192a8-80ab-4e34-ba86-06dad7c96428" class="bulleted-list"><li>small, autonomous, empowered, multi-disciplinary teams<ul id="4553b5cc-fbee-4884-80b1-6bc623a99ac5" class="bulleted-list"><li>team decides vs. decisions going up-down in hierarchy</li></ul><blockquote id="4f3ffebd-1d0a-4340-a3e4-80b34c374535" class="">&quot;this means we cannot have leaders commanding their people what to do, when to do, how to do. No micromanagers. But it also means that <mark class="highlight-orange">each employee needs to become a leader, regardless of their formal title</mark>. It&#x27;s about all of us stepping up to take initiative &quot;</blockquote></li></ul><ul id="392aa885-c6f8-48c1-8ec5-1e85c74cc608" class="bulleted-list"><li>most difficult to change: your own behavior<ul id="bc96e4a8-6a28-4584-b9e6-732f583b14ee" class="bulleted-list"><li>leader&#x27;s responsibility: creating alignment around purpose (and then letting to)</li></ul><ul id="6a0fbb3a-aa29-4271-8740-9d345c849dd2" class="bulleted-list"><li>transparent communication, sharing information</li></ul><ul id="975e0f32-e720-44c7-bf56-73e50351c692" class="bulleted-list"><li>roles will change, especially middle managers&#x27;</li></ul></li></ul><ul id="279d8b6f-c8a4-4526-a2e3-0b32dee8c068" class="bulleted-list"><li></li></ul><ul id="819045a6-4c71-4995-913e-40b6eed07929" class="toggle"><li><details open=""><summary>more reading:</summary><p id="bfba4ac3-8a4d-4369-b911-93c465357ee1" class=""><a href="https://www.bcg.com/about/people/experts/martin-danoesastro">https://www.bcg.com/about/people/experts/martin-danoesastro</a></p></details></li></ul></details></li></ul><p id="0190fe0b-d75d-4596-b77f-0adcc71cee35" class=""><a href="https://www.youtube.com/watch?v=MesYt7PhLFQ">https://www.youtube.com/watch?v=MesYt7PhLFQ</a></p><p id="3248ada3-5f37-436c-9ce6-75bbec8eb19b" class=""><a href="https://www.youtube.com/watch?v=Mtjatz9r-Vc&amp;t=14s"><strong>The art of innovation | Guy Kawasaki | TEDxBerkeley</strong></a></p><p id="30dce5ea-ebe5-400b-9521-e04a8cd0cf81" class="">
+</p><p id="1ab8eeb5-47b5-4c2f-9cd3-bb5e95f29272" class="">
+</p><ul id="4f28ece6-e730-4b5b-b9ac-853dfbec9da2" class="toggle"><li><details open=""><summary><a href="https://youtu.be/_zgSSeZJH30">Satya Nadella on the Vision for Digital Transformation for Microsoft (Microsoft Business Forward 2017 Keynote Presenation)</a></summary><p id="3ae491cc-ca81-45ba-8024-f63f66e4047b" class=""><strong>Creating a system of intelligence that works for your business, that’s the real persuit</strong>. When we sort of say “engaging customers”, we’re not talking about being restricted to one system of record or one system of engagement. It’s not just your CRM system, because most of the interesting work that you do with your customers happens outside of your CRM system. The question is, how do you relate it back. Same with operations: relating back exceptions happening outside of the system back to the system. <strong>That feedback loop is what we describe as system of intelligence.</strong></p><p id="45d0057a-97a6-4122-841a-af80d8cd41ea" class="">Do I have for each one of these digital transformational outcomes a feedback loop where when something happens an observation or an event in the field, and it flows all the way back to some analytical or predictive power, which then allows you to change that outcome? (Recording + doing analysis + taking actions in a feedback look)</p><p id="a8b8176f-69a1-461e-aba2-ee3478b570db" class="">
+</p><p id="cbfaac70-e240-4ada-b692-1e8b8e5bc6d8" class="">Monolitic suites → Modular, modern, business applications</p><p id="51123444-16ea-4a42-bd1a-e88a9caf4e46" class="">Disconnected data silos → Connected data graphs &amp; artificial intelligence</p></details></li></ul></div></article></body></html>
